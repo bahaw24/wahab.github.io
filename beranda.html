@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aksara Terbuka</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        nav {
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+
+        nav a:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            padding: 20px;
+        }
+        .beranda-konten {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .beranda-konten h3 {
+            margin-top: 0;
+        }
+
+        .beranda-konten ul, .beranda-konten ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .beranda-konten li {
+            margin-bottom: 10px;
+        }
+        footer {
+        background-color: #45a049;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        /* Responsif */
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Aksara Terbuka</h1>
+    </header>
+
+    <!-- Navigasi -->
+    <nav>
+        <a href="beranda.html">Beranda</a>
+        <a href="daftar.html">Daftar Buku</a>
+        <a href="peminjaman.html">Peminjaman</a>
+        <a href="info.html">Informasi</a>
+        <a href="loginn.html" id="loginBtn">Login</a>
+    </nav>
+
+    <!-- Konten -->
+    <div class="container">
+        <!-- Beranda -->
+<section id="beranda">
+    <h2>Selamat Datang di Aksara Terbuka</h2>
+    <p>Tempat terbaik untuk mencari dan meminjam buku secara online.</p>
+    <div class="beranda-konten">
+        <h3>Tentang Kami</h3>
+        <p>Aksara Terbuka adalah sebuah platform yang menyediakan akses ke berbagai jenis buku secara online. Kami berkomitmen untuk memberikan pengalaman membaca yang nyaman dan mudah bagi semua pengguna.</p>
+        <h3>Kelebihan Kami</h3>
+        <ul>
+            <li>Akses ke berbagai jenis buku secara online</li>
+            <li>Mudah dan cepat dalam mencari buku</li>
+            <li>Pengalaman membaca yang nyaman dan interaktif</li>
+        </ul>
+        <h3>Bagaimana Cara Membaca Buku di Sini?</h3>
+        <ol>
+            <li>Pilih buku yang ingin Anda baca</li>
+            <li>Klik tombol "Pinjam" untuk meminjam buku</li>
+            <li>Tunggu konfirmasi peminjaman buku</li>
+            <li>Baca buku secara online</li>
+        </ol>
+    </div>
+</section>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Aksara Terbuka. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

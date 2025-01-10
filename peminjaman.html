@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaksi - Aksara Terbuka</title>
+    <style>
+        /* Styling Header dan Footer */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header, footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        nav {
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+        .container {
+            padding: 20px;
+        }
+        /* Styling Form Transaksi */
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="date"], select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        footer {
+            background-color: #45a049;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        /* Responsif */
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+            }
+            form {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Aksara Terbuka</h1>
+    </header>
+
+    <!-- Navigasi -->
+    <nav>
+        <a href="beranda.html">Beranda</a>
+        <a href="daftar.html">Daftar Buku</a>
+        <a href="peminjaman.html">Peminjaman</a>
+        <a href="info.html">Informasi</a>
+        <a href="loginn.html" id="loginBtn">Login</a>
+    </nav>
+
+    <!-- Halaman Transaksi -->
+    <div class="container">
+        <h2>Form Transaksi</h2>
+        <form id="transaksiForm">
+            <label for="nama">Nama Peminjam:</label>
+            <input type="text" id="nama" name="nama" required>
+
+            <label for="judulBuku">Judul Buku:</label>
+            <select id="judulBuku" name="judulBuku" required>
+                <!-- Opsi akan ditambahkan melalui JavaScript -->
+            </select>
+
+            <label for="tanggalPinjam">Tanggal Pinjam:</label>
+            <input type="date" id="tanggalPinjam" name="tanggalPinjam" required>
+
+            <button type="submit">Simpan</button>
+        </form>
+
+        <h2>Riwayat Transaksi</h2>
+        <table id="riwayatTable">
+            <thead>
+                <tr>
+                    <th>Nama Peminjam</th>
+                    <th>Judul Buku</th>
+                    <th>Tanggal Pinjam</th>
+                    <th>Waktu</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data akan ditambahkan secara dinamis di sini -->
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Aksara Terbuka. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Daftar judul buku
+        const judulBukuList = [
+            "Bumi - Tere Liye",
+            "Laskar Pelangi - Andrea Hirata",
+            "Negeri 5 Menara - Ahmad Fuadi",
+            "Perahu Kertas - Dee Lestari",
+            "Pulang - Leila S. Chudori",
+            "Belajar HTML - John Doe",
+            "Pemrograman Python	- Jane Smith",
+            "Fisika Dasar - Michael Brown",
+            "Ekonomi Dasar - James Wilson"
+        ];
+
+        // Menambahkan opsi ke dropdown judul buku
+        const judulBukuSelect = document.getElementById("judulBuku");
+        judulBukuList.forEach(judul => {
+            const option = document.createElement("option");
+            option.value = judul;
+            option.textContent = judul;
+            judulBukuSelect.appendChild(option);
+        });
+
+        // Validasi form dengan JavaScript
+        document.getElementById("transaksiForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const nama = document.getElementById("nama").value;
+            const judulBuku = document.getElementById("judulBuku").value;
+            const tanggalPinjam = document.getElementById("tanggalPinjam").value;
+
+            if (!nama || !judulBuku || !tanggalPinjam) {
+                alert("Semua data harus diisi!");
+                return;
+            }
+
+            const waktuSekarang = new Date();
+            const jam = waktuSekarang.getHours().toString().padStart(2, '0');
+            const menit = waktuSekarang.getMinutes().toString().padStart(2, '0');
+            const waktu = `${jam}:${menit}`;
+
+            const tableBody = document.querySelector("#riwayatTable tbody");
+            const row = document.createElement("tr");
+
+            row.innerHTML = `
+                <td>${nama}</td>
+                <td>${judulBuku}</td>
+                <td>${tanggalPinjam}</td>
+                <td>${waktu}</td>
+            `;
+
+            tableBody.appendChild(row);
+
+            alert("Data berhasil disimpan!");
+
+            // Reset form
+            document.getElementById("transaksiForm").reset();
+        });
+    </script>
+</body>
+</html>

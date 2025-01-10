@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    header {
+        background-color: #4CAF50;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    nav {
+        background-color: #333;
+        display: flex;
+        justify-content: center;
+        padding: 10px 0;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px;
+    }
+
+    nav a:hover {
+        background-color: #45a049;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    footer {
+        background-color: #45a049;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+    }
+
+    table, th, td {
+        border: 1px solid #ddd;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    /* Responsif */
+    @media (max-width: 600px) {
+        nav {
+            flex-direction: column;
+        }
+    }
+</style>
+    </style>
+</head>
+<body>
+    <!-- Header -->
+<header>
+    <h1>Aksara Terbuka</h1>
+</header>
+
+<!-- Navigasi -->
+<nav>
+    <a href="beranda.html">Beranda</a>
+    <a href="daftar.html">Daftar Buku</a>
+    <a href="peminjaman.html">Peminjaman</a>
+    <a href="info.html">Informasi</a>
+    <a href="loginn.html" id="loginBtn">Login</a>
+</nav>
+
+<!-- Konten -->
+<div class="container">
+    <!-- Beranda -->
+    <section id="beranda">
+        <h2>Selamat Datang di Aksara Terbuka</h2>
+        <p>Tempat terbaik untuk mencari dan meminjam buku secara online.</p>
+    </section>
+
+    <!-- Daftar Buku -->
+    <section id="daftar-buku">
+        <h2>Daftar Buku</h2>
+        <table>
+            <tr>
+                <th>Judul Buku</th>
+                <th>Pengarang</th>
+                <th>Kategori</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>Belajar HTML</td>
+                <td>John Doe</td>
+                <td>Teknologi</td>
+                <td>Tersedia</td>
+            </tr>
+            <tr>
+                <td>Pemrograman Python</td>
+                <td>Jane Smith</td>
+                <td>Teknologi</td>
+                <td>Dipinjam</td>
+            </tr>
+            <tr>
+                <td>Matematika Dasar</td>
+                <td>Robert Johnson</td>
+                <td>Matematika</td>
+                <td>Tersedia</td>
+            </tr>
+            <tr>
+                <td>Sejarah Indonesia</td>
+                <td>Emily Chen</td>
+                <td>Sejarah</td>
+                <td>Dipinjam</td>
+            </tr>
+            <tr>
+                <td>Fisika Dasar</td>
+                <td>Michael Brown</td>
+                <td>Fisika</td>
+                <td>Tersedia</td>
+            </tr>
+            <tr>
+                <td>Kimia Dasar</td>
+                <td>Olivia Lee</td>
+                <td>Kimia</td>
+                <td>Dipinjam</td>
+            </tr>
+            <tr>
+                <td>Biologi Dasar</td>
+                <td>William Davis</td>
+                <td>Biologi</td>
+                <td>Tersedia</td>
+            </tr>
+            <tr>
+                <td>Ekonomi Dasar</td>
+                <td>James Wilson</td>
+                <td>Ekonomi</td>
+                <td>Dipinjam</td>
+            </tr>
+        </table>
+    </section>
+
+</div>
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 Aksara Terbuka. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
